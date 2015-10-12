@@ -7,16 +7,23 @@
     <% @messages.each do |message| %>
       <span class="label label-info"><%= message.name %></span>
       <%= message.body %>
-      <br>
+      <br />
     <% end %>
   </div>
 </div>
 
-<%= form_for(Message.new) do |f| %>
-  名前:
-  <%= f.text_field :name %>
-
-  内容:
-  <%= f.text_field :body %>
-  <%= f.submit class: "btn btn-sm btn-primary" %>
-<% end %>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <%= form_for(Message.new) do |f| %>
+    <span class="label label-info">名前</span>
+    <br />
+    <%= f.text_field :name %>
+    <br />
+    <span class="label label-info">内容</span>
+    <br />
+    <%= f.text_area :body %>
+    <br />
+    <%= f.submit class: "btn btn-sm btn-primary" %>
+  <% end %>
+  </div>
+</div>

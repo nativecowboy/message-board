@@ -1,7 +1,8 @@
 class MessagesController < ApplicationController
   def index
-    # Massageを全て取得する。
+    # Messageを全て取得する。
     @messages = Message.all
+    @message = Message.new
   end
 
   ##　ここから記述
